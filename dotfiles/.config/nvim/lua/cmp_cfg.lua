@@ -20,7 +20,7 @@ cmp.setup {
             else
                 fallback()
             end
-        end, { "i", "s" }
+        end, { "i" }
         ),
 
         },
@@ -36,6 +36,7 @@ cmp.setup {
     sources = cmp.config.sources({
       { name = 'nvim_lsp'}, -- You can specify the `cmp_git` source if you were installed it.
     }, {
+    { name = "path" },
       { name = 'buffer' },
     { name = 'vsnip' }, -- For vsnip users.
     })
@@ -45,6 +46,7 @@ cmp.setup {
     sources = cmp.config.sources({
       { name = 'nvim_lsp'}, -- You can specify the `cmp_git` source if you were installed it.
     }, {
+    { name = "path" },
       { name = 'buffer' },
     { name = 'vsnip' }, -- For vsnip users.
     })
