@@ -58,6 +58,8 @@ bindkey '^R' history-incremental-pattern-search-backward
 # If you come from bash you might have to change your $PATH.
 PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin
+export GOPATH=$HOME/go
 # User configuration
 autoload -Uz compinit && compinit
 bindkey '^I' complete-word
