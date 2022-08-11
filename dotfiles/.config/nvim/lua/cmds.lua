@@ -25,3 +25,6 @@ vim.api.nvim_exec([[ autocmd TermOpen * startinsert ]] , false)
 vim.api.nvim_exec([[autocmd filetype python nnoremap <buffer><leader><SPACE> :w<CR> :term python3 "%" <CR>]] , false)
 
 vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader><SPACE> :w<CR> :term go run "%" <CR>]] , false)
+
+
+vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader>t :w<CR> :term go test <CR>]] , false)
