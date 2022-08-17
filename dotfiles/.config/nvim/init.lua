@@ -5,7 +5,7 @@
 -- is called; otherwise, it will default to "\"
 vim.g.mapleader = ","
 
--- IMPORTS
+ IMPORTS
 require('opts')      -- Options
 require('keys')      -- Keymaps
 require('plug')      -- Plug
