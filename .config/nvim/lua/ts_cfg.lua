@@ -1,4 +1,5 @@
 -- treesitter lua
+require("nvim-treesitter.install").prefer_git = true
 require'nvim-treesitter.configs'.setup {
   -- A list of parser names, or "all"
   ensure_installed = { "python", "vim", "lua", "json", "markdown", "toml", "bash", "html", "dockerfile", "css", "yaml", "regex", "go", "hcl", "terraform", "gitignore", "ini", "sql", "php", "make", "typescript","gomod","gosum","gowork"},
