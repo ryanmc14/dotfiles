@@ -1,3 +1,4 @@
+vim.loader.enable()
 vim.api.nvim_exec([[ autocmd VimResized * wincmd =	"auto-resize splits when window resized ]], false)
 vim.api.nvim_exec([[autocmd BufRead,BufNewfile *.md setlocal spell spelllang=en_gb]], false)
 vim.api.nvim_exec([[autocmd BufRead,BufNewfile *.md setlocal spell spelllang=en_gb]], false)
@@ -39,7 +40,9 @@ vim.keymap.set('n', '<c-d>', lazy('<c-d>zz'), { desc = 'Scroll down half screen'
 vim.keymap.set('n', '<c-u>', lazy('<c-u>zz'), { desc = 'Scroll down half screen' })
 vim.cmd([[
 cnoreabbrev W! w!
+cnoreabbrev W1 w!
 cnoreabbrev Q! q!
+cnoreabbrev Q1 q!
 cnoreabbrev Qa! qa!
 cnoreabbrev Wa wa
 cnoreabbrev Wq wq
