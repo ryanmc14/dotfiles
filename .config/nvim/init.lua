@@ -24,6 +24,5 @@ require('opts')      -- Options
 require('keys')      -- Keymaps
 require('lsp_cfg')     -- lsp config
 require('cmds')         --autocmds
-require('harp_cfg')         --harpoon
 require('tele_cfg')         --telescope
 require('dbg')         --debugger

@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-buffer",
     "hrsh7th/cmp-path",
+    "hrsh7th/cmp-cmdline",
   },
   opts = function()
     vim.api.nvim_set_hl(0, "CmpGhostText", { link = "Comment", default = true })
@@ -20,7 +21,10 @@ return {
     expand = function(args)
     require('luasnip').lsp_expand(args.body)
     end,
+
   },
+
+
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
@@ -46,7 +50,7 @@ return {
       }),
       formatting = {
     format = lspkind.cmp_format({
-      mode = 'symbol', -- show only symbol annotations
+      mode = 'symbol_text', -- show only symbol annotations
       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                      -- can also be a function to dynamically calculate max width such as
                      -- maxwidth = function() return math.floor(0.45 * vim.o.columns) end,
@@ -60,7 +64,20 @@ return {
         },
       },
       sorting = defaults.sorting,
-    }
+    },
+              cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' },
+        }, {
+          {
+            name = 'cmdline',
+            option = {
+              ignore_cmds = { 'Man', '!' },
+            },
+          },
+        }),
+      })
         end,
   ---@param opts cmp.ConfigSchema
   config = function(_, opts)
@@ -69,4 +86,5 @@ return {
     end
     require("cmp").setup(opts)
   end,
+
 }

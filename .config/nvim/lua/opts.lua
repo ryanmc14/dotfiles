@@ -106,7 +106,6 @@ require('lualine').setup {
 }
 
 
-require('hypersonic').setup()
 require("which-key").setup {
       -- your configuration comes here
       -- or leave it empty to use the default settings

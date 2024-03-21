@@ -1,7 +1,8 @@
 vim.loader.enable()
 vim.api.nvim_exec([[ autocmd VimResized * wincmd =	"auto-resize splits when window resized ]], false)
-vim.api.nvim_exec([[autocmd BufRead,BufNewfile *.md setlocal spell spelllang=en_gb]], false)
-vim.api.nvim_exec([[autocmd BufRead,BufNewfile *.md setlocal spell spelllang=en_gb]], false)
+vim.api.nvim_exec([[autocmd FileType markdown setlocal spell spelllang=en_gb]], false)
+vim.api.nvim_exec([[autocmd FileType text setlocal spell spelllang=en_gb]], false)
+vim.api.nvim_exec([[autocmd FileType gitcommit setlocal spell spelllang=en_gb]], false)
 vim.api.nvim_exec([[autocmd FileType * set formatoptions-=cro "stop auto commenting on new line]], false)
 vim.api.nvim_exec([[autocmd BufWritePre * %s/\s\+$//e]], false)
 vim.api.nvim_exec([[autocmd BufWritePre * %s/\n\+\%$//e]], false)
@@ -55,3 +56,21 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 ]])
+
+local goyo_group = vim.api.nvim_create_augroup("GoyoGroup", { clear = true })
+vim.api.nvim_create_autocmd("User", {
+    desc = "Hide lualine on goyo enter",
+    group = goyo_group,
+    pattern = "GoyoEnter",
+    callback = function()
+        require("lualine").hide()
+    end,
+})
+vim.api.nvim_create_autocmd("User", {
+    desc = "Show lualine after goyo exit",
+    group = goyo_group,
+    pattern = "GoyoLeave",
+    callback = function()
+        require("lualine").hide({ unhide = true })
+    end,
+})
