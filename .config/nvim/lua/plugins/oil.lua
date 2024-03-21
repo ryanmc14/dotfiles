@@ -7,5 +7,6 @@ return {
   },
   opts = {},
   -- Optional dependencies
-  dependencies = { "nvim-tree/nvim-web-devicons" },
+  dependencies = { "https://github.com/kyazdani42/nvim-web-devicons.git"
+ },
 }

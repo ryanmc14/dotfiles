@@ -1,6 +1,7 @@
 # CONFIGURATION
 # AUTO COMPLETE
 # env vars
+source ~/.zprofile
 bindkey '^I' complete-word
 export FZF_DEFAULT_COMMAND='fd'
 export FZF_ALT_C_COMMAND="fd"
