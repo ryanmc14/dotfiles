@@ -2,8 +2,8 @@
 # AUTO COMPLETE
 # env vars
 bindkey '^I' complete-word
-export FZF_DEFAULT_COMMAND='fd'
-export FZF_ALT_C_COMMAND="fd"
+export FZF_DEFAULT_COMMAND='fdfind'
+export FZF_ALT_C_COMMAND="fdfind"
 # paths
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -21,7 +21,7 @@ else
     export EDITOR='nvim'
 fi
 
-# VI MODE
+# VI MODE in terminal
 export KEYTIMEOUT=1
 bindkey -v '^?' backward-delete-char
 function zle-keymap-select { # Change cursor shape for different vi modes.
@@ -48,7 +48,6 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
 # Enable searching through history
 # Create history directory if it doesn't exist
 HISTS_DIR=$HOME/.bash_history.d
@@ -77,12 +76,13 @@ _comp_options+=(globdots)		# Include hidden files.
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
 fpath=(~/.zshrc_comp/ $fpath);
 for FILE in ~/.config/zshrc_comp/* ; do source $FILE ; done
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
-
+# fzf auto completion - need this for ctl-r to function
+source /usr/share/doc/fzf/examples/key-bindings.zsh
+source /usr/share/doc/fzf/examples/completion.zsh
 
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
 autoload -Uz add-zsh-hook vcs_info
@@ -104,4 +104,11 @@ zstyle ':vcs_info:git:*' formats       ''$'\uE0A0 %b%u%c '
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 
+# command alias
 alias ipconfig="ip --brief address show"
+
+# source zprofile for api keys and secrets - we wont commit zprofile to git
+source .zprofile
+
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
