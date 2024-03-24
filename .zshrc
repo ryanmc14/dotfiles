@@ -7,6 +7,8 @@ export FZF_ALT_C_COMMAND="fdfind"
 # paths
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/.local/share/go
+export PATH=$PATH:$HOME/.local/share/go/bin
 # Enable colors and change prompt:
 autoload -U colors && colors
 if [ -x /usr/bin/dircolors ]; then
@@ -64,7 +66,7 @@ else
   export HISTFILE="${HISTS_DIR}/bash_history_no_tmux"
 fi
 # Stash the new history each time a command runs.
-export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
+#export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
 
 # Basic auto/tab complete:
 autoload -U compinit && compinit
@@ -79,6 +81,7 @@ for FILE in ~/.config/zshrc_comp/* ; do source $FILE ; done
 
 
 autoload -U +X bashcompinit && bashcompinit
+source /etc/bash_completion.d/azure-cli
 complete -o nospace -C /usr/bin/terraform terraform
 # fzf auto completion - need this for ctl-r to function
 source /usr/share/doc/fzf/examples/key-bindings.zsh
@@ -106,6 +109,7 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 # command alias
 alias ipconfig="ip --brief address show"
+alias fdfind="fd"
 
 # source zprofile for api keys and secrets - we wont commit zprofile to git
 source .zprofile

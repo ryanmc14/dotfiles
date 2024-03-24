@@ -8,7 +8,6 @@ return {
     ({ 'projekt0n/github-nvim-theme' }),
     'tpope/vim-obsession',
     'mtdl9/vim-log-highlighting',
-    'chrisbra/csv.vim',
     ("christoomey/vim-tmux-navigator"),
     'nvim-telescope/telescope.nvim',
     'nvim-lua/plenary.nvim',
