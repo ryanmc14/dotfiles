@@ -25,7 +25,15 @@ map("n", "<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", {})
 local harpoon = require("harpoon")
 
 -- REQUIRED
-harpoon:setup()
+harpoon:setup({
+    settings = {
+    save_on_toggle = true,
+    sync_on_ui_close = true,
+    key = function()
+        return vim.loop.cwd()
+    end,
+}}
+)
 -- REQUIRED
 
 vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
