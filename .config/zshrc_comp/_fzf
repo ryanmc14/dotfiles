@@ -79,13 +79,13 @@ fi
 # To use custom commands instead of find, override _fzf_compgen_{path,dir}
 if ! declare -f _fzf_compgen_path > /dev/null; then
   _fzf_compgen_path() {
-fdfind --max-depth 5 --hidden --follow --exclude ".git" . "$1"
+fd --max-depth 5 --hidden --follow --exclude ".git" . "$1"
   }
 fi
 
 if ! declare -f _fzf_compgen_dir > /dev/null; then
   _fzf_compgen_dir() {
-fdfind --max-depth 5 --hidden --type d --follow --exclude ".git" . "$1"
+fd --max-depth 5 --hidden --type d --follow --exclude ".git" . "$1"
   }
 fi
 

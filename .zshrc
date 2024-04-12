@@ -2,8 +2,8 @@
 # AUTO COMPLETE
 # env vars
 bindkey '^I' complete-word
-export FZF_DEFAULT_COMMAND='fdfind'
-export FZF_ALT_C_COMMAND="fdfind"
+export FZF_DEFAULT_COMMAND='fd'
+export FZF_ALT_C_COMMAND="fd"
 # paths
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:/usr/local/go/bin
@@ -66,7 +66,8 @@ else
   export HISTFILE="${HISTS_DIR}/bash_history_no_tmux"
 fi
 # Stash the new history each time a command runs.
-#export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
+export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
+
 
 # Basic auto/tab complete:
 autoload -U compinit && compinit
@@ -84,8 +85,8 @@ autoload -U +X bashcompinit && bashcompinit
 source /etc/bash_completion.d/azure-cli
 complete -o nospace -C /usr/bin/terraform terraform
 # fzf auto completion - need this for ctl-r to function
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-source /usr/share/doc/fzf/examples/completion.zsh
+source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/fzf/shell/completion.zsh
 
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
 autoload -Uz add-zsh-hook vcs_info
@@ -109,10 +110,9 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 # command alias
 alias ipconfig="ip --brief address show"
-alias fdfind="fd"
 
 # source zprofile for api keys and secrets - we wont commit zprofile to git
-source .zprofile
+source .$HOME/zprofile
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

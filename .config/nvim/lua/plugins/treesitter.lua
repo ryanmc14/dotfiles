@@ -82,6 +82,7 @@ return {
       "gomod",
       "gowork",
       "gosum",
+      "graphql",
       "gitignore",
       "jq",
       "make",
@@ -89,7 +90,6 @@ return {
       "sql",
       "terraform",
       "toml",
-      "xml",
 
     },
     incremental_selection = {
