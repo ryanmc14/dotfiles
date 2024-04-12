@@ -112,7 +112,7 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 alias ipconfig="ip --brief address show"
 
 # source zprofile for api keys and secrets - we wont commit zprofile to git
-source .$HOME/zprofile
+source $HOME/.zprofile
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
