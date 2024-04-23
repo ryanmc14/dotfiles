@@ -56,6 +56,7 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 ]])
+vim.keymap.set('n', 'q:', '<nop>' )
 
 local goyo_group = vim.api.nvim_create_augroup("GoyoGroup", { clear = true })
 vim.api.nvim_create_autocmd("User", {
