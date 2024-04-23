@@ -24,7 +24,7 @@ else
 fi
 
 # VI MODE in terminal
-export KEYTIMEOUT=1
+#export KEYTIMEOUT=1
 bindkey -v '^?' backward-delete-char
 function zle-keymap-select { # Change cursor shape for different vi modes.
   if [[ ${KEYMAP} == vicmd ]] ||
@@ -110,6 +110,7 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 # command alias
 alias ipconfig="ip --brief address show"
+alias cls="clear"
 
 # source zprofile for api keys and secrets - we wont commit zprofile to git
 source $HOME/.zprofile
