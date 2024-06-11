@@ -24,17 +24,7 @@ return {
 
   },
 
-mapping_cmd = cmp.mapping.preset.cmdline({
-  ['<CR>'] = {
-    c = function(default)
-      if cmp.visible() then
-        return cmp.confirm({ select = true })
-      end
 
-      default()
-    end,
-  },
-}),
       mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert })),
         ["<C-p>"] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert })),
@@ -85,7 +75,17 @@ mapping_cmd = cmp.mapping.preset.cmdline({
       sorting = defaults.sorting,
     },
               cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline(),
+        mapping = cmp.mapping.preset.cmdline({
+  ['<CR>'] = {
+    c = function(default)
+      if cmp.visible() then
+        return cmp.confirm({ select = true })
+      end
+
+      default()
+    end,
+  },
+}),
         sources = cmp.config.sources({
           { name = 'path' },
         }, {
