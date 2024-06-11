@@ -111,3 +111,9 @@ require("which-key").setup {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     }
+
+
+if vim.g.neovide then
+    -- Put anything you want to happen only in Neovide here
+    vim.g.neovide_cursor_animation_length = 0
+end
