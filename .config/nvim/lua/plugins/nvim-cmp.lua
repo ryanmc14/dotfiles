@@ -73,31 +73,8 @@ return {
         },
       },
       sorting = defaults.sorting,
-    },
-              cmp.setup.cmdline(':', {
-        mapping = cmp.mapping.preset.cmdline({
-  ['<CR>'] = {
-    c = function(default)
-      if cmp.visible() then
-        return cmp.confirm({ select = true })
-      end
-
-      default()
-    end,
-  },
-}),
-        sources = cmp.config.sources({
-          { name = 'path' },
-        }, {
-          {
-            name = 'cmdline',
-            option = {
-              ignore_cmds = { 'Man', '!' },
-            },
-          },
-        }),
-      })
-        end,
+    }
+         end,
   ---@param opts cmp.ConfigSchema
   config = function(_, opts)
     for _, source in ipairs(opts.sources) do

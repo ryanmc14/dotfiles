@@ -13,9 +13,9 @@ local on_attach = function(client, bufnr)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_buf_set_keymap('n', 'gr', 'vim.lsp.buf.references', 'bufopts')
-vim.api.nvim_buf_set_keymap('n', '<leader>rf', 'function() vim.lsp.buf.format { async = true } end', 'bufopts')
-vim.api.nvim_buf_set_keymap('n', 'gD', 'vim.lsp.buf.declaration', "bufopts")
+vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', 'vim.lsp.buf.references', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rf', 'function() vim.lsp.buf.format { async = true } end', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', 'vim.lsp.buf.declaration', opts)
 end
 
 local nvim_lsp = require('lspconfig')
@@ -41,6 +41,3 @@ settings = {
     usePlaceholders = true,
   }
   }
-
-
-require("luasnip.loaders.from_vscode").lazy_load()

@@ -15,7 +15,7 @@ vim.api.nvim_exec([[autocmd TermOpen * :set nonumber norelativenumber]], false)
 
 vim.api.nvim_exec([[autocmd filetype python nnoremap <buffer><leader><SPACE> k :w<CR> :term python3 "%" <CR>]] , false)
 
-vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader><SPACE> :! go run "%" <CR>]] , false)
+vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader><SPACE> :! gofmt -w % && go run "%" <CR>]] , false)
 vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader>t :w<CR> :! go test <CR>]] , false)
 
 vim.api.nvim_exec([[
@@ -56,7 +56,6 @@ cnoreabbrev W w
 cnoreabbrev Q q
 cnoreabbrev Qa qa
 ]])
-vim.keymap.set('n', 'q:', '<nop>' )
 
 local goyo_group = vim.api.nvim_create_augroup("GoyoGroup", { clear = true })
 vim.api.nvim_create_autocmd("User", {

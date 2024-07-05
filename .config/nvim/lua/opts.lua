@@ -4,7 +4,7 @@ local opt = vim.opt
 -- [[ Misc ]]
 opt.mouse = "a"
 opt.completeopt = "menu,menuone,noselect"
-opt.timeoutlen = 300
+opt.timeoutlen = 500
 opt.ttimeoutlen = 0
 opt.shortmess = "A"
 opt.clipboard = ""
@@ -68,7 +68,7 @@ require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
-    component_separators = { left = '', right = ''},
+    component_separators = { left = " ", right = " "},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
       statusline = {},
@@ -86,8 +86,8 @@ require('lualine').setup {
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'tabs', 'filename', 'harpoon2'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = {'filename', 'harpoon2'},
+    lualine_x = {'filetype'},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
