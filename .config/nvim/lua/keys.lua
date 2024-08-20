@@ -3,6 +3,7 @@ local map = vim.api.nvim_set_keymap
 map('i', 'jk', '<Esc>', {})
 map('t', 'jk', '<C-\\><C-n>', {})
 map('t', '<Esc>', '<C-\\><C-n>', {})
+map('i', 'jj', '<Esc>', {})
 
 -- Copy and Paste
 map('n', 'Y', 'yg_', {})

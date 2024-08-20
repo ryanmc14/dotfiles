@@ -25,7 +25,7 @@ opt.fileencoding = 'utf8'        -- str:  File encoding to use
 opt.syntax = "ON"                -- str:  Allow syntax highlighting
 opt.termguicolors = true         -- bool: If term supports ui color then enable
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+--vim.cmd([[colorscheme gruvbox]])
 
 -- [[ Search ]]
 opt.ignorecase = true            -- bool: Ignore case in search patterns
@@ -95,7 +95,7 @@ require('lualine').setup {
     lualine_a = {},
     lualine_b = {},
     lualine_c = {'filename'},
-    lualine_x = {'location'},
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {}
   },

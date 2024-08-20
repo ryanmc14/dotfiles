@@ -74,3 +74,24 @@ vim.api.nvim_create_autocmd("User", {
         require("lualine").hide({ unhide = true })
     end,
 })
+
+vim.cmd 'command! Csoff lua vim.diagnostic.config{virtual_text=false}'
+vim.cmd 'command! Cson lua vim.diagnostic.config{virtual_text=true}'
+
+
+
+-- default colorscheme or fallback
+vim.g.SCHEME = "gruvbox"
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  nested = true,
+  callback = function()
+    pcall(vim.cmd.colorscheme, vim.g.SCHEME)
+  end,
+})
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function(params)
+    vim.g.SCHEME = params.match
+  end,
+})

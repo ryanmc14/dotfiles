@@ -55,7 +55,6 @@ return {
       "c",
       "c_sharp",
       "cpp",
-      "csv",
       "diff",
       "html",
       "http",

@@ -16,6 +16,8 @@ vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rena
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', 'vim.lsp.buf.references', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rf', 'function() vim.lsp.buf.format { async = true } end', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', 'vim.lsp.buf.declaration', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>csof', '<cmd>lua vim.diagnostic.config{virtual_text=false}', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>cson', '<cmd>lua vim.diagnostic.config{virtual_text=true}', opts)
 end
 
 local nvim_lsp = require('lspconfig')
@@ -24,6 +26,7 @@ nvim_lsp['jedi_language_server'].setup {
 on_attach = on_attach,
 capabilities = capabilities,
 }
+
 
 nvim_lsp['gopls'].setup{
 on_attach = on_attach,
@@ -41,3 +44,6 @@ settings = {
     usePlaceholders = true,
   }
   }
+
+nvim_lsp.csharp_ls.setup{
+}
