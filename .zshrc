@@ -10,6 +10,7 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/.local/share/go
 export PATH=$PATH:$HOME/.local/share/go/bin
 export PATH="$PATH:/home/rmcle/.dotnet/tools"
+export PATH="$PATH:$HOME/.vivify"
 # Enable colors and change prompt:
 autoload -U colors && colors
 if [ -x /usr/bin/dircolors ]; then
