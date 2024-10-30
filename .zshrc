@@ -72,6 +72,7 @@ export PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
 
 
 # Basic auto/tab complete:
+fpath=(/home/rmcle/.zshrc_comp $fpath);
 autoload -U compinit && compinit
 zstyle ':completion:*' menu select=long
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
@@ -79,12 +80,11 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 _comp_options+=(globdots)		# Include hidden files.
 # case insensitive path-completion 
 zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]} l:|=* r:|=*' 
-fpath=(~/.zshrc_comp/ $fpath);
-for FILE in ~/.config/zshrc_comp/* ; do source $FILE ; done
 
 
 autoload -U +X bashcompinit && bashcompinit
 source /etc/bash_completion.d/azure-cli
+source /home/rmcle/.zshrc_comp/_openssl
 complete -o nospace -C /usr/bin/terraform terraform
 # fzf auto completion - need this for ctl-r to function
 source /usr/share/fzf/shell/key-bindings.zsh
@@ -119,3 +119,4 @@ source $HOME/.zprofile
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
+. "/home/rmcle/.deno/env"
