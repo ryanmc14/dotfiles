@@ -83,7 +83,6 @@ zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}
 
 
 autoload -U +X bashcompinit && bashcompinit
-source /etc/bash_completion.d/azure-cli
 source /home/rmcle/.zshrc_comp/_openssl
 complete -o nospace -C /usr/bin/terraform terraform
 # fzf auto completion - need this for ctl-r to function
