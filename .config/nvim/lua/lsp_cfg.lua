@@ -58,3 +58,6 @@ nvim_lsp.ts_ls.setup {
   root_dir = nvim_lsp.util.root_pattern("package.json"),
   single_file_support = false
 }
+
+nvim_lsp.terraformls.setup{
+}
