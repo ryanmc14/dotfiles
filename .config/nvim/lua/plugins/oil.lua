@@ -3,7 +3,7 @@ return {
   lazy = true,
   cmd  = {"Oil"},
   keys = {
-      {"<leader>o", "<cmd>Oil<CR>", desc = "toggle Oil"},
+      {"<leader>o", "<cmd>lua require('oil').open_float('.')<CR>", desc = "toggle Oil"},
   },
   opts = {},
   -- Optional dependencies
