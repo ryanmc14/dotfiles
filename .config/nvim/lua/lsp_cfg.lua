@@ -1,5 +1,4 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
+--local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Mappings.
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -8,7 +7,7 @@ vim.api.nvim_set_keymap('n', '<leader>gl', ':Gitsigns toggle_current_line_blame<
 -- Use an on_attach function to only map the following keys after the lsp attaches to the current buffer
 local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 -- See `:help vim.lsp.*` for documentation on any of the below functions
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -25,6 +24,9 @@ on_attach = on_attach,
 capabilities = capabilities,
 }
 
+capabilities = require('blink.cmp').get_lsp_capabilities({
+  textDocument = { completion = { completionItem = { snippetSupport = true } } },
+})
 
 nvim_lsp['gopls'].setup{
 on_attach = on_attach,
