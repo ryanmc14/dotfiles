@@ -24,6 +24,9 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
+from os.path import expanduser
+from subprocess import Popen
+from libqtile import hook
 from libqtile import bar, layout, qtile, widget
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -31,6 +34,12 @@ from libqtile.utils import guess_terminal
 
 mod = "mod4"
 terminal = guess_terminal()
+
+
+@hook.subscribe.startup_once
+def startup():
+    Popen(expanduser("~/.config/qtile/autostart.sh"))
+
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -77,8 +86,10 @@ keys = [
     Key([mod], "t", lazy.window.toggle_floating(), desc="Toggle floating on the focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
+    Key([mod], "s", lazy.spawn("flameshot gui -p /home/rmcle/Pictures/Screenshots/"), desc="Take a screensho"),
+    Key([mod], "e", lazy.spawn("chromium-browser"), desc="launch browser"),
     #Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
-        Key([mod], 's', lazy.spawn("rofi -show drun")),
+    Key(["mod1"], 'F1', lazy.spawn("rofi -show drun")),
 ]
 
 # Add key bindings to switch VTs in Wayland.
