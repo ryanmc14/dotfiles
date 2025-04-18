@@ -8,12 +8,12 @@ local on_attach = function(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
 vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 -- See `:help vim.lsp.*` for documentation on any of the below functions
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', 'vim.lsp.buf.references', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>rf', 'function() vim.lsp.buf.format { async = true } end', opts)
-vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', 'vim.lsp.buf.declaration', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>ld', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lk', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lr', 'vim.lsp.buf.references', opts)
+vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lf', 'function() vim.lsp.buf.format { async = true } end', opts)
+--vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>lD', 'vim.lsp.buf.declaration', opts)
 end
 
 local nvim_lsp = require('lspconfig')
