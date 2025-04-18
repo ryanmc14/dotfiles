@@ -10,9 +10,9 @@ return {
                 keys = {
 
       { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-      { icon = " ", key = "w", desc = "Wiki Files", action = ":lua Snacks.dashboard.pick('files', {cwd = '/home/rmcle/Rsync/wiki/content/md'})" },
+      { icon = " ", key = "w", desc = "Wiki Files", action = ":lua Snacks.dashboard.pick('files', {cwd = '/home/rmcle/Rsync/wiki'})" },
       { icon = " ", key = "n", desc = "New File", action = ":ene" },
-      { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+      { icon = " ", key = "s", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
       { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
       { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
       { icon = " ", key = "s", desc = "Restore Session", section = "session" },
@@ -52,6 +52,7 @@ return {
     { "<leader>fb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>fc", function() Snacks.picker.files({ cwd = vim.fn.stdpath("config") }) end, desc = "Find Config File" },
     { "<leader>ff", function() Snacks.picker.files() end, desc = "Find Files" },
+    { "<leader>fw", function() Snacks.picker.files({cwd = '/home/rmcle/Rsync/wiki'}) end, desc = "Find Wiki Files" },
     { "<leader>fg", function() Snacks.picker.git_files() end, desc = "Find Git Files" },
     { "<leader>fp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "<leader>fr", function() Snacks.picker.recent() end, desc = "Recent" },

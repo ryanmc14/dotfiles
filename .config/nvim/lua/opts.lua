@@ -57,7 +57,7 @@ vim.g.mkdp_refresh_slow=1
 vim.g.mkdp_preview_options =
     {['disable_filename'] = 1
 }
-vim.g.wiki_root = '~/Rsync/wiki/content/md'
+vim.g.wiki_root = '~/Rsync/wiki'
 vim.g.wiki_write_on_nav=1
 --vim.g.wiki_select_method='ui_select'
 vim.g.wiki_mappings_use_defaults= 'local'

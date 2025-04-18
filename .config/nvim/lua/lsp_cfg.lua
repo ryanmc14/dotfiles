@@ -1,4 +1,3 @@
---local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 -- Mappings.
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -24,9 +23,8 @@ on_attach = on_attach,
 capabilities = capabilities,
 }
 
-capabilities = require('blink.cmp').get_lsp_capabilities({
-  textDocument = { completion = { completionItem = { snippetSupport = true } } },
-})
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+--capabilities = require('blink.cmp').get_lsp_capabilities({textDocument = { completion = { completionItem = { snippetSupport = true } } },})
 
 nvim_lsp['gopls'].setup{
 on_attach = on_attach,
@@ -38,6 +36,7 @@ settings = {
         shadow = true,
       },
       staticcheck = true,
+      matcher = "caseInsensitive"
     },
   },
   init_options = {
