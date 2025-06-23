@@ -17,6 +17,8 @@ map('v', 'J', ":m '>+1<CR>gv=gv", {})
 -- undo / redo
 map('n','U', "<C-R>", {})
 
+map('n', 'q:', '<nop>', {})
+
 local harpoon = require("harpoon")
 
 -- REQUIRED

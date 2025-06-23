@@ -13,7 +13,8 @@ vim.api.nvim_exec([[ autocmd TermOpen * startinsert ]] , false)
 vim.api.nvim_exec([[autocmd TermOpen * :set nonumber norelativenumber]], false)
 
 
-vim.api.nvim_exec([[autocmd filetype python nnoremap <buffer><leader><SPACE> k :w<CR> :term python3 "%" <CR>]] , false)
+vim.api.nvim_exec([[autocmd filetype python nnoremap <buffer><leader><SPACE> :w<CR> :term python3 "%" <CR>]] , false)
+vim.api.nvim_exec([[autocmd filetype javascript nnoremap <buffer><leader><SPACE> :w<CR> :term deno "%" <CR>]] , false)
 
 vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader><SPACE> :! gofmt -w % && go run "%" <CR>]] , false)
 vim.api.nvim_exec([[autocmd filetype go nnoremap <buffer><leader>t :w<CR> :! go test <CR>]] , false)
@@ -75,8 +76,8 @@ vim.api.nvim_create_autocmd("User", {
     end,
 })
 
-vim.cmd 'command! Csoff lua vim.diagnostic.config{virtual_text=false}'
-vim.cmd 'command! Cson lua vim.diagnostic.config{virtual_text=true}'
+---vim.cmd 'command! Csoff lua vim.diagnostic.config{virtual_text=false}'
+---vim.cmd 'command! Cson lua vim.diagnostic.config{virtual_text=true}'
 
 
 

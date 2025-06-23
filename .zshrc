@@ -86,8 +86,8 @@ autoload -U +X bashcompinit && bashcompinit
 source /home/rmcle/.zshrc_comp/_openssl
 complete -o nospace -C /usr/bin/terraform terraform
 # fzf auto completion - need this for ctl-r to function
-source /usr/share/fzf/shell/key-bindings.zsh
-source /usr/share/fzf/shell/completion.zsh
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
 
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
 autoload -Uz add-zsh-hook vcs_info
@@ -120,3 +120,6 @@ source $HOME/.zprofile
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 . "/home/rmcle/.deno/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
