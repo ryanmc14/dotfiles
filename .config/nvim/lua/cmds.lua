@@ -1,5 +1,5 @@
 vim.loader.enable()
-vim.api.nvim_exec([[ autocmd VimResized * wincmd =	"auto-resize splits when window resized ]], false)
+vim.api.nvim_exec([[autocmd VimResized * wincmd =	"auto-resize splits when window resized ]], false)
 vim.api.nvim_exec([[autocmd FileType markdown setlocal spell spelllang=en_gb]], false)
 vim.api.nvim_exec([[autocmd FileType text setlocal spell spelllang=en_gb]], false)
 vim.api.nvim_exec([[autocmd FileType gitcommit setlocal spell spelllang=en_gb]], false)
@@ -7,6 +7,7 @@ vim.api.nvim_exec([[autocmd FileType * set formatoptions-=cro "stop auto comment
 vim.api.nvim_exec([[autocmd BufWritePre * %s/\s\+$//e]], false)
 vim.api.nvim_exec([[autocmd BufWritePre * %s/\n\+\%$//e]], false)
 vim.api.nvim_exec([[autocmd BufWritePre *.[ch] %s/\%$/\r/e]], false)
+vim.api.nvim_exec([[autocmd FileType json set formatprg=jq]], false)
 
 
 vim.api.nvim_exec([[ autocmd TermOpen * startinsert ]] , false)
