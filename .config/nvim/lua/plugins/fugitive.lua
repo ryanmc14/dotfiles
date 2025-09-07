@@ -1,6 +1,6 @@
 return {
     'tpope/vim-fugitive',
-    lazy = true,
+    lazy = false,
     cmd = {"Git"},
     --cmd = {"Git commit", "Git status", "Git blame", "Git log"},
 }
