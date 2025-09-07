@@ -17,6 +17,7 @@ return {
   "folke/which-key.nvim",
     'nvim-neotest/nvim-nio',
     'onsails/lspkind.nvim',
+    "darianmorat/gruvdark.nvim",
     {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'kyazdani42/nvim-web-devicons'}

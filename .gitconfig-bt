@@ -2,6 +2,17 @@
 	name = Ryan Mcleavy
 	email = rmcleavy@iptrade-networks.com
 [safe]
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_gapls_AudioControl
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_Clocks
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_DeckPlugin
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_GnomeWindowCalls
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_MediaPlugin
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_MicMute
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_OBSPlugin
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_OSPlugin
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_VolumeMixer
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_Weather
+	directory = /home/rmcle/.var/app/com.core447.StreamController/data/plugins/com_core447_Requests
 [http]
 	sslVerify = false
 [credential]
