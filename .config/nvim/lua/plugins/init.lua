@@ -14,7 +14,7 @@ return {
     'sago35/tinygo.vim',
     'itchyny/calendar.vim',
     'lewis6991/gitsigns.nvim',
-  "folke/which-key.nvim",
+    'folke/which-key.nvim',
     'nvim-neotest/nvim-nio',
     'onsails/lspkind.nvim',
     "darianmorat/gruvdark.nvim",
